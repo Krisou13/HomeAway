@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Votre Agence HomeAway' %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid text-center">
+        <h1>HomeAway</h1>
+        <p class="mt-4">
+            Sérieux, efficacité et professionnalisme au service de votre projet immobilier.
+
+Située Cours Mirabeau, notre agence immobilière développe sur Aix en Provence, tous les métiers de l’immobilier, de la transaction au syndic de copropriétés, en passant par la gestion immobilière.
+
+Notre service de transaction vous propose un choix de biens immobiliers sur Aix en Provence et son agglomération, et selon la demande sur l’ensemble du département des Bouches du Rhône.
+
+Vous trouverez parmi notre sélection de biens à la vente des appartements sur Aix en Provence et son agglomération, dans l’ancien, dans des immeubles du centre ville aux façades de style, dans le récent ou le neuf, dans des résidences modernes avec garages en sous sol, parc et piscine.</p>
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>Les derniers biens</h2>
+        <div class="row flex">
+            {% for property in properties %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ path ('property.show', {id: property.id, slug: property.slug}) }}">{{ property.title }}</a>
+                        </h5>
+                        <p classe="card-text">{{ property.city }} ({{ property.postalCode }})</p>
+                        <div class="text-primary" style="font-weight: bold; font-size: 2rem">{{ property.formattedPrice }} €</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
