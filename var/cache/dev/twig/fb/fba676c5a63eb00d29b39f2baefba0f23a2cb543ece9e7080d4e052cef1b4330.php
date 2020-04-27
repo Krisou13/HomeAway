@@ -95,7 +95,7 @@ class __TwigTemplate_56609901bfe0ca6c71322125980bc071606f7532d68618aa4278d551ba4
         </div>
         ";
         // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'rest');
         echo "
     <button class=\"btn btn-primary\">";
         // line 20
@@ -149,9 +149,9 @@ class __TwigTemplate_56609901bfe0ca6c71322125980bc071606f7532d68618aa4278d551ba4
             <div class=\"col-md-5\">{{ form_row(form.postal_code) }}</div>
             <div class=\"col-md-5\">{{ form_row(form.sold) }}</div>
         </div>
-        {{ form_widget(form) }}
+        {{ form_rest(form) }}
     <button class=\"btn btn-primary\">{{ button|default ('Enregistrer')}}</button>  
     {{ form_end(form) }}
-", "admin/property/_form.html.twig", "C:\\workspace\\homeaway\\templates\\admin\\property\\_form.html.twig");
+", "admin/property/_form.html.twig", "C:\\Users\\amane\\Desktop\\Homeaway\\templates\\admin\\property\\_form.html.twig");
     }
 }

@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/Container33Gsm2Q/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerUZUexpQ/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -31,12 +31,15 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
+$classes[] = 'App\Controller\Admin\AdminOptionController';
 $classes[] = 'App\Controller\Admin\AdminPropertyController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\PropertyController';
 $classes[] = 'App\Controller\SecurityController';
+$classes[] = 'App\Form\OptionType';
 $classes[] = 'App\Form\PropertySearchType';
 $classes[] = 'App\Form\PropertyType';
+$classes[] = 'App\Repository\OptionRepository';
 $classes[] = 'App\Repository\PropertyRepository';
 $classes[] = 'App\Repository\PropertySearchRepository';
 $classes[] = 'App\Repository\UserRepository';

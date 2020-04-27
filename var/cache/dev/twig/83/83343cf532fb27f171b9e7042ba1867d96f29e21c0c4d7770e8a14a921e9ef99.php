@@ -88,13 +88,7 @@ class __TwigTemplate_491a6db765db105007961c48fb4ebe4030f85ea68a23a4c1b96aee6dab4
         echo "    <div class=\"jumbotron jumbotron-fluid text-center\">
         <h1>HomeAway</h1>
         <p class=\"mt-4\">
-            Sérieux, efficacité et professionnalisme au service de votre projet immobilier.
-
-Située Cours Mirabeau, notre agence immobilière développe sur Aix en Provence, tous les métiers de l’immobilier, de la transaction au syndic de copropriétés, en passant par la gestion immobilière.
-
-Notre service de transaction vous propose un choix de biens immobiliers sur Aix en Provence et son agglomération, et selon la demande sur l’ensemble du département des Bouches du Rhône.
-
-Vous trouverez parmi notre sélection de biens à la vente des appartements sur Aix en Provence et son agglomération, dans l’ancien, dans des immeubles du centre ville aux façades de style, dans le récent ou le neuf, dans des résidences modernes avec garages en sous sol, parc et piscine.</p>
+            Equipe sérieuse et efficace , Situer dans les abors de Carnoux-en-Provence nous vous présentons les meilleurs bien voir pépite , situer sur la ciotat , Cassis . Vous étes amoureux comme nous de la mers et des bien marin bien venue chez nous !! n'hésiter pas a contacté un de nos agens pour plus d'information </p>
         </p>
     </div>
 
@@ -102,31 +96,31 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         <h2>Les derniers biens</h2>
         <div class=\"row flex\">
             ";
-        // line 22
+        // line 16
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 16, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["property"]) {
-            // line 23
-            echo "            <div class=\"col-3\">
+            // line 17
+            echo "            <div class=\"col-md-4\">
                 <div class=\"card\">
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">
                             <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 27), "slug" => twig_get_attribute($this->env, $this->source, $context["property"], "slug", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 21), "slug" => twig_get_attribute($this->env, $this->source, $context["property"], "slug", [], "any", false, false, false, 21)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 21), "html", null, true);
             echo "</a>
                         </h5>
                         <p classe=\"card-text\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "city", [], "any", false, false, false, 29), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "city", [], "any", false, false, false, 23), "html", null, true);
             echo " (";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "postalCode", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "postalCode", [], "any", false, false, false, 23), "html", null, true);
             echo ")</p>
                         <div class=\"text-primary\" style=\"font-weight: bold; font-size: 2rem\">";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "formattedPrice", [], "any", false, false, false, 30), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "formattedPrice", [], "any", false, false, false, 24), "html", null, true);
             echo " €</div>
                     </div>
                 </div>
@@ -136,7 +130,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['property'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 29
         echo "        </div>
     </div>
 ";
@@ -160,7 +154,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
 
     public function getDebugInfo()
     {
-        return array (  140 => 35,  129 => 30,  123 => 29,  116 => 27,  110 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  134 => 29,  123 => 24,  117 => 23,  110 => 21,  104 => 17,  100 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,13 +167,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
     <div class=\"jumbotron jumbotron-fluid text-center\">
         <h1>HomeAway</h1>
         <p class=\"mt-4\">
-            Sérieux, efficacité et professionnalisme au service de votre projet immobilier.
-
-Située Cours Mirabeau, notre agence immobilière développe sur Aix en Provence, tous les métiers de l’immobilier, de la transaction au syndic de copropriétés, en passant par la gestion immobilière.
-
-Notre service de transaction vous propose un choix de biens immobiliers sur Aix en Provence et son agglomération, et selon la demande sur l’ensemble du département des Bouches du Rhône.
-
-Vous trouverez parmi notre sélection de biens à la vente des appartements sur Aix en Provence et son agglomération, dans l’ancien, dans des immeubles du centre ville aux façades de style, dans le récent ou le neuf, dans des résidences modernes avec garages en sous sol, parc et piscine.</p>
+            Equipe sérieuse et efficace , Situer dans les abors de Carnoux-en-Provence nous vous présentons les meilleurs bien voir pépite , situer sur la ciotat , Cassis . Vous étes amoureux comme nous de la mers et des bien marin bien venue chez nous !! n'hésiter pas a contacté un de nos agens pour plus d'information </p>
         </p>
     </div>
 
@@ -187,7 +175,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         <h2>Les derniers biens</h2>
         <div class=\"row flex\">
             {% for property in properties %}
-            <div class=\"col-3\">
+            <div class=\"col-md-4\">
                 <div class=\"card\">
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">
@@ -202,6 +190,6 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         </div>
     </div>
 {% endblock %}
-", "pages/home.html.twig", "C:\\Users\\amane\\Desktop\\eeee\\templates\\pages\\home.html.twig");
+", "pages/home.html.twig", "C:\\Users\\amane\\Desktop\\Homeaway\\templates\\pages\\home.html.twig");
     }
 }

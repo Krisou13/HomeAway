@@ -60,7 +60,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t\t";
         // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 17
         echo "
 
 \t</head>
@@ -70,7 +70,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
 
 \t\t\t<a class=\"navbar-brand\" href=\"";
-        // line 24
+        // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">HomeAway</a>
 
@@ -88,8 +88,8 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t\t\t\t\t<li class=\"nav-item\">
 
 \t\t\t\t\t\t<a class=\"nav-link ";
-        // line 39
-        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 39, $this->source); })()), "properties"))) {
+        // line 40
+        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 40, $this->source); })()), "properties"))) {
             echo "active ";
         }
         echo "\" href=\"";
@@ -100,34 +100,34 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
 \t\t\t\t</ul>
 \t\t\t\t";
-        // line 44
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44)) {
-            // line 45
+        // line 45
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45)) {
+            // line 46
             echo "\t\t\t\t<ul class=\"navbar-nav\">
 \t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t<a href=\"";
-            // line 47
+            // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\" class=\"nav-link\">Se déconnecter</a>
 \t\t\t\t\t</li>
 \t\t\t\t</ul>
 \t\t\t\t";
         }
-        // line 51
+        // line 52
         echo "\t\t\t</div>
 
 \t\t</nav>
 
 \t\t";
-        // line 55
-        $this->displayBlock('body', $context, $blocks);
         // line 56
+        $this->displayBlock('body', $context, $blocks);
+        // line 57
         echo "
 
 \t\t";
-        // line 58
+        // line 59
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 67
+        // line 71
         echo "
 \t</body>
 </html>
@@ -172,6 +172,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
         // line 12
         echo "
 \t\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css\">
 
 \t\t";
         
@@ -182,7 +183,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 55
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,7 +201,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 58
+    // line 59
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -210,7 +211,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 59
+        // line 60
         echo "
 \t\t\t<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
 
@@ -218,6 +219,9 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
 \t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
 
+\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js\"> </script>
+
+\t\t\t <script>\$('select').select2();</script> 
 \t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -239,7 +243,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     public function getDebugInfo()
     {
-        return array (  214 => 59,  204 => 58,  186 => 55,  173 => 12,  163 => 11,  144 => 8,  131 => 67,  129 => 58,  125 => 56,  123 => 55,  117 => 51,  110 => 47,  106 => 45,  104 => 44,  92 => 39,  74 => 24,  64 => 16,  62 => 11,  58 => 9,  56 => 8,  47 => 1,);
+        return array (  215 => 60,  205 => 59,  187 => 56,  173 => 12,  163 => 11,  144 => 8,  131 => 71,  129 => 59,  125 => 57,  123 => 56,  117 => 52,  110 => 48,  106 => 46,  104 => 45,  92 => 40,  74 => 25,  64 => 17,  62 => 11,  58 => 9,  56 => 8,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -257,6 +261,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t\t{% block stylesheets %}
 
 \t\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css\">
 
 \t\t{% endblock %}
 
@@ -309,10 +314,13 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
 \t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
 
+\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js\"> </script>
+
+\t\t\t <script>\$('select').select2();</script> 
 \t\t{% endblock %}
 
 \t</body>
 </html>
-", "base.html.twig", "C:\\Users\\amane\\Desktop\\eeee\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\amane\\Desktop\\Homeaway\\templates\\base.html.twig");
     }
 }
