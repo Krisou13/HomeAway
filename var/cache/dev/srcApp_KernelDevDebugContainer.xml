@@ -23,6 +23,8 @@
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
+      <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -81,6 +83,14 @@
         <parameter key="path">C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
+      <parameter key="VichUploaderBundle" type="collection">
+        <parameter key="path">C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle</parameter>
+        <parameter key="namespace">Vich\UploaderBundle</parameter>
+      </parameter>
+      <parameter key="LiipImagineBundle" type="collection">
+        <parameter key="path">C:\Users\amane\Desktop\Homeaway\vendor\liip\imagine-bundle</parameter>
+        <parameter key="namespace">Liip\ImagineBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
@@ -130,8 +140,10 @@
     <parameter key="serializer.mapping.cache.prefix"></parameter>
     <parameter key="twig.exception_listener.controller">null</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>bootstrap_4_layout.html.twig</parameter>
+      <parameter>@LiipImagine/Form/form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\amane\Desktop\Homeaway/templates</parameter>
     <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
@@ -244,6 +256,109 @@
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
+    <parameter key="vich_uploader.mappings" type="collection">
+      <parameter key="property_image" type="collection">
+        <parameter key="uri_prefix">/images/properties</parameter>
+        <parameter key="upload_destination">C:\Users\amane\Desktop\Homeaway/public/images/properties</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.property_image</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
+    <parameter key="liip_imagine.resolvers" type="collection">
+      <parameter key="default" type="collection">
+        <parameter key="web_path" type="collection">
+          <parameter key="web_root">C:\Users\amane\Desktop\Homeaway/public</parameter>
+          <parameter key="cache_prefix">media/cache</parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="liip_imagine.loaders" type="collection">
+      <parameter key="default" type="collection">
+        <parameter key="filesystem" type="collection">
+          <parameter key="locator">filesystem</parameter>
+          <parameter key="data_root" type="collection">
+            <parameter>C:\Users\amane\Desktop\Homeaway/public</parameter>
+          </parameter>
+          <parameter key="allow_unresolvable_data_roots">false</parameter>
+          <parameter key="bundle_resources" type="collection">
+            <parameter key="enabled">false</parameter>
+            <parameter key="access_control_type">blacklist</parameter>
+            <parameter key="access_control_list" type="collection"/>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="liip_imagine.jpegoptim.binary">/usr/bin/jpegoptim</parameter>
+    <parameter key="liip_imagine.jpegoptim.stripAll">true</parameter>
+    <parameter key="liip_imagine.jpegoptim.max">null</parameter>
+    <parameter key="liip_imagine.jpegoptim.progressive">true</parameter>
+    <parameter key="liip_imagine.jpegoptim.tempDir">null</parameter>
+    <parameter key="liip_imagine.optipng.binary">/usr/bin/optipng</parameter>
+    <parameter key="liip_imagine.optipng.level">7</parameter>
+    <parameter key="liip_imagine.optipng.stripAll">true</parameter>
+    <parameter key="liip_imagine.optipng.tempDir">null</parameter>
+    <parameter key="liip_imagine.pngquant.binary">/usr/bin/pngquant</parameter>
+    <parameter key="liip_imagine.mozjpeg.binary">/opt/mozjpeg/bin/cjpeg</parameter>
+    <parameter key="liip_imagine.driver_service">liip_imagine.gd</parameter>
+    <parameter key="liip_imagine.cache.resolver.default">default</parameter>
+    <parameter key="liip_imagine.default_image">null</parameter>
+    <parameter key="liip_imagine.filter_sets" type="collection">
+      <parameter key="thumb" type="collection">
+        <parameter key="quality">75</parameter>
+        <parameter key="jpeg_quality">null</parameter>
+        <parameter key="png_compression_level">null</parameter>
+        <parameter key="png_compression_filter">null</parameter>
+        <parameter key="format">null</parameter>
+        <parameter key="animated">false</parameter>
+        <parameter key="cache">null</parameter>
+        <parameter key="data_loader">null</parameter>
+        <parameter key="default_image">null</parameter>
+        <parameter key="filters" type="collection">
+          <parameter key="thumbnail" type="collection">
+            <parameter key="size" type="collection">
+              <parameter>360</parameter>
+              <parameter>230</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="post_processors" type="collection"/>
+      </parameter>
+      <parameter key="medium" type="collection">
+        <parameter key="quality">75</parameter>
+        <parameter key="jpeg_quality">null</parameter>
+        <parameter key="png_compression_level">null</parameter>
+        <parameter key="png_compression_filter">null</parameter>
+        <parameter key="format">null</parameter>
+        <parameter key="animated">false</parameter>
+        <parameter key="cache">null</parameter>
+        <parameter key="data_loader">null</parameter>
+        <parameter key="default_image">null</parameter>
+        <parameter key="filters" type="collection">
+          <parameter key="thumbnail" type="collection">
+            <parameter key="size" type="collection">
+              <parameter>800</parameter>
+              <parameter>530</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="post_processors" type="collection"/>
+      </parameter>
+    </parameter>
+    <parameter key="liip_imagine.binary.loader.default">default</parameter>
+    <parameter key="liip_imagine.controller.filter_action">Liip\ImagineBundle\Controller\ImagineController::filterAction</parameter>
+    <parameter key="liip_imagine.controller.filter_runtime_action">Liip\ImagineBundle\Controller\ImagineController::filterRuntimeAction</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -316,6 +431,10 @@
       <parameter key="mailer.data_collector" type="collection">
         <parameter>mailer</parameter>
         <parameter>@WebProfiler/Collector/mailer.html.twig</parameter>
+      </parameter>
+      <parameter key="Vich\UploaderBundle\DataCollector\MappingCollector" type="collection">
+        <parameter>vich_uploader.mapping_collector</parameter>
+        <parameter>@VichUploader/Collector/mapping_collector.html.twig</parameter>
       </parameter>
       <parameter key="data_collector.config" type="collection">
         <parameter>config</parameter>
@@ -817,6 +936,8 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument>Vich\UploaderBundle\Form\Type</argument>
+        <argument>Liip\ImagineBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\OptionType</argument>
@@ -826,6 +947,9 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>Vich\UploaderBundle\Form\Type\VichFileType</argument>
+        <argument>Vich\UploaderBundle\Form\Type\VichImageType</argument>
+        <argument>Liip\ImagineBundle\Form\Type\ImageType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1155,7 +1279,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.QhPwbfn"/>
+      <argument type="service" id=".service_locator.ofxohYI"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1458,6 +1582,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.ar.yml</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1474,17 +1599,20 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.bg.yml</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.ca.yml</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.cs.yml</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1500,6 +1628,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1511,12 +1640,14 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1537,12 +1668,14 @@
           <argument key="fi" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.fi.yml</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.fr.yml</argument>
             <argument>C:\Users\amane\Desktop\Homeaway/translations\form.fr.yaml</argument>
           </argument>
           <argument key="gl" type="collection">
@@ -1565,6 +1698,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -1581,6 +1715,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.it.yml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
@@ -1598,6 +1733,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.lt.yml</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -1618,6 +1754,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.nl.yml</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1635,10 +1772,12 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.pt.yml</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
@@ -1657,6 +1796,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -1667,6 +1807,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.sl.yml</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
@@ -1700,12 +1841,14 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.tr.yml</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.uk.yml</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
@@ -1729,12 +1872,16 @@
           <argument key="sw" type="collection">
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
+          <argument key="vn" type="collection">
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.vn.yml</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\validator/Resources/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/FrameworkBundle/translations</argument>
@@ -1763,6 +1910,9 @@
           <argument>C:\Users\amane\Desktop\Homeaway\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/DoctrineFixturesBundle/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/KnpPaginatorBundle/translations</argument>
+          <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/VichUploaderBundle/translations</argument>
+          <argument>C:\Users\amane\Desktop\Homeaway\vendor\liip\imagine-bundle/translations</argument>
+          <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/LiipImagineBundle/translations</argument>
           <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
@@ -1771,6 +1921,7 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\form/Resources/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/translations</argument>
             <argument>translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/FrameworkBundle/translations</argument>
@@ -1799,6 +1950,9 @@
             <argument>C:\Users\amane\Desktop\Homeaway\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/DoctrineFixturesBundle/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/KnpPaginatorBundle/translations</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/VichUploaderBundle/translations</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\vendor\liip\imagine-bundle/translations</argument>
+            <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/LiipImagineBundle/translations</argument>
             <argument>C:\Users\amane\Desktop\Homeaway\src/Resources/translations</argument>
           </argument>
         </argument>
@@ -2064,6 +2218,9 @@
       </call>
       <call method="add">
         <argument type="service" id="mailer.data_collector"/>
+      </call>
+      <call method="add">
+        <argument type="service" id="Vich\UploaderBundle\DataCollector\MappingCollector"/>
       </call>
       <call method="add">
         <argument type="service" id="data_collector.config"/>
@@ -3144,6 +3301,12 @@
       <call method="addExtension">
         <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="Vich\UploaderBundle\Twig\Extension\UploaderExtension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="liip_imagine.templating.filter_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3253,6 +3416,22 @@
       <call method="addPath">
         <argument>C:\Users\amane\Desktop\Homeaway\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/templates</argument>
+        <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle/templates</argument>
+        <argument>!VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\amane\Desktop\Homeaway\vendor\liip\imagine-bundle/Resources/views</argument>
+        <argument>LiipImagine</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\amane\Desktop\Homeaway\vendor\liip\imagine-bundle/Resources/views</argument>
+        <argument>!LiipImagine</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\amane\Desktop\Homeaway/templates</argument>
@@ -3554,6 +3733,15 @@
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
       <argument type="service" id=".service_locator.bpvU51K"/>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.property_image"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.property_image"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.property_image"/>
+      </call>
       <call method="addEventListener">
         <argument type="collection">
           <argument>loadClassMetadata</argument>
@@ -3720,6 +3908,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
+          <argument key="VichUploaderBundle">Vich\UploaderBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -3766,12 +3955,17 @@
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
         <argument>C:\Users\amane\Desktop\Homeaway\src\Entity</argument>
+        <argument>C:\Users\amane\Desktop\Homeaway\vendor\vich\uploader-bundle\src\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>Vich\UploaderBundle\Entity</argument>
       </call>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
@@ -4320,6 +4514,16 @@
     <service id="security.rememberme.response_listener" class="Symfony\Component\Security\Http\RememberMe\ResponseListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
+    </service>
+    <service id="templating.helper.logout_url" class="Symfony\Bundle\SecurityBundle\Templating\Helper\LogoutUrlHelper" public="false">
+      <tag name="templating.helper" alias="logout_url"/>
+      <argument type="service" id="security.logout_url_generator"/>
+      <deprecated>The "%service_id%" service is deprecated since Symfony 4.3 and will be removed in 5.0.</deprecated>
+    </service>
+    <service id="templating.helper.security" class="Symfony\Bundle\SecurityBundle\Templating\Helper\SecurityHelper" public="false">
+      <tag name="templating.helper" alias="security"/>
+      <argument type="service" id="security.authorization_checker" on-invalid="ignore"/>
+      <deprecated>The "%service_id%" service is deprecated since Symfony 4.3 and will be removed in 5.0.</deprecated>
     </service>
     <service id="twig.extension.logout_url" class="Symfony\Bridge\Twig\Extension\LogoutUrlExtension" public="false">
       <tag name="twig.extension"/>
@@ -5041,6 +5245,691 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer.property_image" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter" public="false"/>
+    <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
+    <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter" public="false"/>
+    <service id="vich_uploader.listener.doctrine.base" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.orm" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.orm" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.orm" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.orm" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.storage.file_system" class="Vich\UploaderBundle\Storage\FileSystemStorage" public="false">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+    </service>
+    <service id="vich_uploader.file_injector" class="Vich\UploaderBundle\Injector\FileInjector" public="false">
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.metadata.file_locator" class="Metadata\Driver\FileLocator" public="false">
+      <argument type="collection"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.annotation" class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver" public="false">
+      <argument type="service" id="annotations.cached_reader"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.xml" class="Vich\UploaderBundle\Metadata\Driver\XmlDriver" public="false">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.yaml" class="Vich\UploaderBundle\Metadata\Driver\YamlDriver" public="false">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.chain" class="Metadata\Driver\DriverChain" public="false">
+      <argument type="collection">
+        <argument type="service" id="vich_uploader.metadata_driver.xml"/>
+        <argument type="service" id="vich_uploader.metadata_driver.annotation"/>
+        <argument type="service" id="vich_uploader.metadata_driver.yaml"/>
+      </argument>
+    </service>
+    <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache" public="false">
+      <argument>C:\Users\amane\Desktop\Homeaway\var\cache\dev/vich_uploader</argument>
+    </service>
+    <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory" public="false">
+      <argument type="service" id="vich_uploader.metadata_driver.chain"/>
+      <argument>Metadata\ClassHierarchyMetadata</argument>
+      <argument>true</argument>
+      <call method="setCache">
+        <argument type="service" id="vich_uploader.metadata.cache.file_cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="vich_uploader.metadata_reader" class="Vich\UploaderBundle\Metadata\MetadataReader" public="false">
+      <argument type="service" id="vich_uploader.metadata_factory"/>
+    </service>
+    <service id="vich_uploader.property_mapping_factory" class="Vich\UploaderBundle\Mapping\PropertyMappingFactory" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <argument>_name</argument>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyNamer" class="Vich\UploaderBundle\Naming\PropertyNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\OrignameNamer" class="Vich\UploaderBundle\Naming\OrignameNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\HashNamer" class="Vich\UploaderBundle\Naming\HashNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\Base64Namer" class="Vich\UploaderBundle\Naming\Base64Namer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" class="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" class="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" public="true">
+      <argument type="service" id="property_accessor" on-invalid="null"/>
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="vich_uploader.current_date_time_helper" class="Vich\UploaderBundle\Naming\CurrentDateTimeHelper" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" class="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" public="true">
+      <argument type="service" id="vich_uploader.current_date_time_helper" on-invalid="null"/>
+      <argument type="service" id="property_accessor" on-invalid="null"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Util\Transliterator" class="Vich\UploaderBundle\Util\Transliterator" public="false">
+      <argument type="service" id="slugger"/>
+    </service>
+    <service id="vich_uploader.download_handler" class="Vich\UploaderBundle\Handler\DownloadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.upload_handler" class="Vich\UploaderBundle\Handler\UploadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.file_injector"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="vich_uploader.command.mapping_debug_class" class="Vich\UploaderBundle\Command\MappingDebugClassCommand" public="false">
+      <tag name="console.command" command="vich:mapping:debug-class"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:debug-class</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_debug" class="Vich\UploaderBundle\Command\MappingDebugCommand" public="false">
+      <tag name="console.command" command="vich:mapping:debug"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <call method="setName">
+        <argument>vich:mapping:debug</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_list_classes" class="Vich\UploaderBundle\Command\MappingListClassesCommand" public="false">
+      <tag name="console.command" command="vich:mapping:list-classes"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:list-classes</argument>
+      </call>
+    </service>
+    <service id="Vich\UploaderBundle\DataCollector\MappingCollector" class="Vich\UploaderBundle\DataCollector\MappingCollector" public="false">
+      <tag name="data_collector" template="@VichUploader/Collector/mapping_collector.html.twig" id="vich_uploader.mapping_collector"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+    </service>
+    <service id="vich_uploader.form.type.file" class="Vich\UploaderBundle\Form\Type\VichFileType" public="true">
+      <tag name="form.type" alias="vich_file"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="vich_uploader.form.type.image" class="Vich\UploaderBundle\Form\Type\VichImageType" public="true">
+      <tag name="form.type" alias="vich_image"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="liip_imagine.cache.manager" on-invalid="null"/>
+    </service>
+    <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper" public="false">
+      <tag name="templating.helper" alias="vich_uploader"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
+    </service>
+    <service id="vich_uploader.listener.clean.property_image" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>property_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.property_image" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>property_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.property_image" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>property_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="liip_imagine.mime_types" class="Symfony\Component\Mime\MimeTypes">
+      <factory class="Symfony\Component\Mime\MimeTypes" method="getDefault"/>
+    </service>
+    <service id="liip_imagine.cache.resolver.default" class="Liip\ImagineBundle\Imagine\Cache\Resolver\WebPathResolver" public="true">
+      <tag name="liip_imagine.cache.resolver" resolver="default"/>
+      <argument type="service" id="filesystem"/>
+      <argument type="service" id="router.request_context"/>
+      <argument>C:\Users\amane\Desktop\Homeaway/public</argument>
+      <argument>media/cache</argument>
+    </service>
+    <service id="liip_imagine.binary.loader.default" class="Liip\ImagineBundle\Binary\Loader\FileSystemLoader" public="true">
+      <tag name="liip_imagine.binary.loader" loader="default"/>
+      <argument type="service">
+        <service class="Symfony\Component\Mime\MimeTypes">
+          <factory class="Symfony\Component\Mime\MimeTypes" method="getDefault"/>
+        </service>
+      </argument>
+      <argument type="service">
+        <service class="Symfony\Component\Mime\MimeTypes">
+          <factory class="Symfony\Component\Mime\MimeTypes" method="getDefault"/>
+        </service>
+      </argument>
+      <argument type="service">
+        <service class="Liip\ImagineBundle\Binary\Locator\FileSystemLocator" public="false">
+          <argument type="collection">
+            <argument>C:\Users\amane\Desktop\Homeaway/public</argument>
+          </argument>
+          <argument>false</argument>
+        </service>
+      </argument>
+    </service>
+    <service id="liip_imagine.factory.config.filter.argument.point" class="Liip\ImagineBundle\Factory\Config\Filter\Argument\PointFactory"/>
+    <service id="liip_imagine.factory.config.filter.argument.size" class="Liip\ImagineBundle\Factory\Config\Filter\Argument\SizeFactory"/>
+    <service id="liip_imagine.factory.config.stack" class="Liip\ImagineBundle\Factory\Config\StackFactory"/>
+    <service id="liip_imagine.factory.config.filter.auto_rotate" class="Liip\ImagineBundle\Factory\Config\Filter\AutoRotateFactory"/>
+    <service id="liip_imagine.factory.config.filter.background" class="Liip\ImagineBundle\Factory\Config\Filter\BackgroundFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.crop" class="Liip\ImagineBundle\Factory\Config\Filter\CropFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.point"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.downscale" class="Liip\ImagineBundle\Factory\Config\Filter\DownscaleFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.flip" class="Liip\ImagineBundle\Factory\Config\Filter\FlipFactory"/>
+    <service id="liip_imagine.factory.config.filter.grayscale" class="Liip\ImagineBundle\Factory\Config\Filter\GrayscaleFactory"/>
+    <service id="liip_imagine.factory.config.filter.interlace" class="Liip\ImagineBundle\Factory\Config\Filter\InterlaceFactory"/>
+    <service id="liip_imagine.factory.config.filter.paste" class="Liip\ImagineBundle\Factory\Config\Filter\PasteFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.point"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.relative_resize" class="Liip\ImagineBundle\Factory\Config\Filter\RelativeResizeFactory"/>
+    <service id="liip_imagine.factory.config.filter.resize" class="Liip\ImagineBundle\Factory\Config\Filter\ResizeFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.rotate" class="Liip\ImagineBundle\Factory\Config\Filter\RotateFactory"/>
+    <service id="liip_imagine.factory.config.filter.scale" class="Liip\ImagineBundle\Factory\Config\Filter\ScaleFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.strip" class="Liip\ImagineBundle\Factory\Config\Filter\StripFactory"/>
+    <service id="liip_imagine.factory.config.filter.thumbnail" class="Liip\ImagineBundle\Factory\Config\Filter\ThumbnailFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.upscale" class="Liip\ImagineBundle\Factory\Config\Filter\UpscaleFactory">
+      <argument type="service" id="liip_imagine.factory.config.filter.argument.size"/>
+    </service>
+    <service id="liip_imagine.factory.config.filter.watermark" class="Liip\ImagineBundle\Factory\Config\Filter\WatermarkFactory"/>
+    <service id="liip_imagine.config.filter_factory_collection" class="Liip\ImagineBundle\Config\FilterFactoryCollection">
+      <argument type="service" id="liip_imagine.factory.config.filter.auto_rotate"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.background"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.crop"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.downscale"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.flip"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.grayscale"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.interlace"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.paste"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.relative_resize"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.resize"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.rotate"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.scale"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.strip"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.thumbnail"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.upscale"/>
+      <argument type="service" id="liip_imagine.factory.config.filter.watermark"/>
+    </service>
+    <service id="liip_imagine.config.stack_builder" class="Liip\ImagineBundle\Config\StackBuilder">
+      <argument type="service" id="liip_imagine.factory.config.stack"/>
+      <argument type="service" id="liip_imagine.config.filter_factory_collection"/>
+    </service>
+    <service id="liip_imagine.config.stack_collection" class="Liip\ImagineBundle\Config\StackCollection" public="true">
+      <argument type="service" id="liip_imagine.config.stack_builder"/>
+      <argument>%liip_imagine.filter_sets%</argument>
+    </service>
+    <service id="liip_imagine.filter.manager" class="Liip\ImagineBundle\Imagine\Filter\FilterManager" public="true">
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument type="service" id="liip_imagine.gd"/>
+      <argument type="service" id="liip_imagine.binary.mime_type_guesser"/>
+      <call method="addLoader">
+        <argument>relative_resize</argument>
+        <argument type="service" id="liip_imagine.filter.loader.relative_resize"/>
+      </call>
+      <call method="addLoader">
+        <argument>resize</argument>
+        <argument type="service" id="liip_imagine.filter.loader.resize"/>
+      </call>
+      <call method="addLoader">
+        <argument>thumbnail</argument>
+        <argument type="service" id="liip_imagine.filter.loader.thumbnail"/>
+      </call>
+      <call method="addLoader">
+        <argument>crop</argument>
+        <argument type="service" id="liip_imagine.filter.loader.crop"/>
+      </call>
+      <call method="addLoader">
+        <argument>grayscale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.grayscale"/>
+      </call>
+      <call method="addLoader">
+        <argument>paste_image</argument>
+        <argument type="service" id="liip_imagine.filter.loader.paste_image"/>
+      </call>
+      <call method="addLoader">
+        <argument>paste</argument>
+        <argument type="service" id="liip_imagine.filter.loader.paste"/>
+      </call>
+      <call method="addLoader">
+        <argument>watermark</argument>
+        <argument type="service" id="liip_imagine.filter.loader.watermark"/>
+      </call>
+      <call method="addLoader">
+        <argument>watermark_image</argument>
+        <argument type="service" id="liip_imagine.filter.loader.watermark_image"/>
+      </call>
+      <call method="addLoader">
+        <argument>background</argument>
+        <argument type="service" id="liip_imagine.filter.loader.background"/>
+      </call>
+      <call method="addLoader">
+        <argument>strip</argument>
+        <argument type="service" id="liip_imagine.filter.loader.strip"/>
+      </call>
+      <call method="addLoader">
+        <argument>scale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.scale"/>
+      </call>
+      <call method="addLoader">
+        <argument>upscale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.upscale"/>
+      </call>
+      <call method="addLoader">
+        <argument>downscale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.downscale"/>
+      </call>
+      <call method="addLoader">
+        <argument>auto_rotate</argument>
+        <argument type="service" id="liip_imagine.filter.loader.auto_rotate"/>
+      </call>
+      <call method="addLoader">
+        <argument>rotate</argument>
+        <argument type="service" id="liip_imagine.filter.loader.rotate"/>
+      </call>
+      <call method="addLoader">
+        <argument>flip</argument>
+        <argument type="service" id="liip_imagine.filter.loader.flip"/>
+      </call>
+      <call method="addLoader">
+        <argument>interlace</argument>
+        <argument type="service" id="liip_imagine.filter.loader.interlace"/>
+      </call>
+      <call method="addLoader">
+        <argument>resample</argument>
+        <argument type="service" id="liip_imagine.filter.loader.resample"/>
+      </call>
+      <call method="addLoader">
+        <argument>fixed</argument>
+        <argument type="service" id="liip_imagine.filter.loader.fixed"/>
+      </call>
+      <call method="addPostProcessor">
+        <argument>jpegoptim</argument>
+        <argument type="service" id="liip_imagine.filter.post_processor.jpegoptim"/>
+      </call>
+      <call method="addPostProcessor">
+        <argument>optipng</argument>
+        <argument type="service" id="liip_imagine.filter.post_processor.optipng"/>
+      </call>
+      <call method="addPostProcessor">
+        <argument>pngquant</argument>
+        <argument type="service" id="liip_imagine.filter.post_processor.pngquant"/>
+      </call>
+      <call method="addPostProcessor">
+        <argument>mozjpeg</argument>
+        <argument type="service" id="liip_imagine.filter.post_processor.mozjpeg"/>
+      </call>
+    </service>
+    <service id="liip_imagine.data.manager" class="Liip\ImagineBundle\Imagine\Data\DataManager" public="true">
+      <argument type="service" id="liip_imagine.binary.mime_type_guesser"/>
+      <argument type="service">
+        <service class="Symfony\Component\Mime\MimeTypes">
+          <factory class="Symfony\Component\Mime\MimeTypes" method="getDefault"/>
+        </service>
+      </argument>
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument>default</argument>
+      <argument>null</argument>
+      <call method="addLoader">
+        <argument>default</argument>
+        <argument type="service" id="liip_imagine.binary.loader.default"/>
+      </call>
+    </service>
+    <service id="liip_imagine.cache.manager" class="Liip\ImagineBundle\Imagine\Cache\CacheManager" public="true">
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="liip_imagine.cache.signer"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument>default</argument>
+      <call method="addResolver">
+        <argument>default</argument>
+        <argument type="service" id="liip_imagine.cache.resolver.default"/>
+      </call>
+      <call method="addResolver">
+        <argument>no_cache</argument>
+        <argument type="service" id="liip_imagine.cache.resolver.no_cache_web_path"/>
+      </call>
+    </service>
+    <service id="liip_imagine.filter.configuration" class="Liip\ImagineBundle\Imagine\Filter\FilterConfiguration">
+      <argument>%liip_imagine.filter_sets%</argument>
+    </service>
+    <service id="liip_imagine.service.filter" class="Liip\ImagineBundle\Service\FilterService">
+      <argument type="service" id="liip_imagine.data.manager"/>
+      <argument type="service" id="liip_imagine.filter.manager"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+    </service>
+    <service id="liip_imagine.controller.config" class="Liip\ImagineBundle\Config\Controller\ControllerConfig" public="false">
+      <argument>301</argument>
+    </service>
+    <service id="Liip\ImagineBundle\Controller\ImagineController" class="Liip\ImagineBundle\Controller\ImagineController" public="true">
+      <argument type="service" id="liip_imagine.service.filter"/>
+      <argument type="service" id="liip_imagine.data.manager"/>
+      <argument type="service" id="liip_imagine.cache.signer"/>
+      <argument type="service" id="liip_imagine.controller.config"/>
+    </service>
+    <service id="liip_imagine.meta_data.reader" class="Imagine\Image\Metadata\ExifMetadataReader" public="false"/>
+    <service id="liip_imagine.gd" class="Imagine\Gd\Imagine" public="false">
+      <call method="setMetadataReader">
+        <argument type="service" id="liip_imagine.meta_data.reader"/>
+      </call>
+    </service>
+    <service id="liip_imagine.imagick" class="Imagine\Imagick\Imagine" public="false">
+      <call method="setMetadataReader">
+        <argument type="service" id="liip_imagine.meta_data.reader"/>
+      </call>
+    </service>
+    <service id="liip_imagine.gmagick" class="Imagine\Gmagick\Imagine" public="false">
+      <call method="setMetadataReader">
+        <argument type="service" id="liip_imagine.meta_data.reader"/>
+      </call>
+    </service>
+    <service id="liip_imagine.templating.filter_extension" class="Liip\ImagineBundle\Templating\FilterExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+    </service>
+    <service id="liip_imagine.filter.loader.relative_resize" class="Liip\ImagineBundle\Imagine\Filter\Loader\RelativeResizeFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="relative_resize"/>
+    </service>
+    <service id="liip_imagine.filter.loader.resize" class="Liip\ImagineBundle\Imagine\Filter\Loader\ResizeFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="resize"/>
+    </service>
+    <service id="liip_imagine.filter.loader.thumbnail" class="Liip\ImagineBundle\Imagine\Filter\Loader\ThumbnailFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="thumbnail"/>
+    </service>
+    <service id="liip_imagine.filter.loader.crop" class="Liip\ImagineBundle\Imagine\Filter\Loader\CropFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="crop"/>
+    </service>
+    <service id="liip_imagine.filter.loader.grayscale" class="Liip\ImagineBundle\Imagine\Filter\Loader\GrayscaleFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="grayscale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.paste_image" class="Liip\ImagineBundle\Imagine\Filter\Loader\PasteFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="paste_image"/>
+      <argument type="service" id="liip_imagine.gd"/>
+      <argument>C:\Users\amane\Desktop\Homeaway</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.paste" class="Liip\ImagineBundle\Imagine\Filter\Loader\PasteFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="paste"/>
+      <argument type="service" id="liip_imagine.gd"/>
+      <argument>C:\Users\amane\Desktop\Homeaway\src</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.watermark" class="Liip\ImagineBundle\Imagine\Filter\Loader\WatermarkFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="watermark"/>
+      <argument type="service" id="liip_imagine.gd"/>
+      <argument>C:\Users\amane\Desktop\Homeaway\src</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.watermark_image" class="Liip\ImagineBundle\Imagine\Filter\Loader\WatermarkFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="watermark_image"/>
+      <argument type="service" id="liip_imagine.gd"/>
+      <argument>C:\Users\amane\Desktop\Homeaway</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.background" class="Liip\ImagineBundle\Imagine\Filter\Loader\BackgroundFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="background"/>
+      <argument type="service" id="liip_imagine.gd"/>
+    </service>
+    <service id="liip_imagine.filter.loader.strip" class="Liip\ImagineBundle\Imagine\Filter\Loader\StripFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="strip"/>
+    </service>
+    <service id="liip_imagine.filter.loader.scale" class="Liip\ImagineBundle\Imagine\Filter\Loader\ScaleFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="scale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.upscale" class="Liip\ImagineBundle\Imagine\Filter\Loader\UpscaleFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="upscale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.downscale" class="Liip\ImagineBundle\Imagine\Filter\Loader\DownscaleFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="downscale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.auto_rotate" class="Liip\ImagineBundle\Imagine\Filter\Loader\AutoRotateFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="auto_rotate"/>
+    </service>
+    <service id="liip_imagine.filter.loader.rotate" class="Liip\ImagineBundle\Imagine\Filter\Loader\RotateFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="rotate"/>
+    </service>
+    <service id="liip_imagine.filter.loader.flip" class="Liip\ImagineBundle\Imagine\Filter\Loader\FlipFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="flip"/>
+    </service>
+    <service id="liip_imagine.filter.loader.interlace" class="Liip\ImagineBundle\Imagine\Filter\Loader\InterlaceFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="interlace"/>
+    </service>
+    <service id="liip_imagine.filter.loader.resample" class="Liip\ImagineBundle\Imagine\Filter\Loader\ResampleFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="resample"/>
+      <argument type="service" id="liip_imagine.gd"/>
+    </service>
+    <service id="liip_imagine.filter.loader.fixed" class="Liip\ImagineBundle\Imagine\Filter\Loader\FixedFilterLoader" public="true">
+      <tag name="liip_imagine.filter.loader" loader="fixed"/>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.filesystem" class="Liip\ImagineBundle\Binary\Loader\FileSystemLoader">
+      <argument type="service" id="liip_imagine.mime_type_guesser"/>
+      <argument type="service" id="liip_imagine.extension_guesser"/>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.stream" class="Liip\ImagineBundle\Binary\Loader\StreamLoader">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.flysystem" class="Liip\ImagineBundle\Binary\Loader\FlysystemLoader" abstract="true">
+      <argument type="service" id="liip_imagine.extension_guesser"/>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.chain" class="Liip\ImagineBundle\Binary\Loader\ChainLoader" abstract="true">
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.locator.filesystem" class="Liip\ImagineBundle\Binary\Locator\FileSystemLocator" shared="false" public="false">
+      <tag name="liip_imagine.binary.locator" shared=""/>
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.locator.filesystem_insecure" class="Liip\ImagineBundle\Binary\Locator\FileSystemInsecureLocator" shared="false" public="false">
+      <tag name="liip_imagine.binary.locator" shared=""/>
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.prototype.web_path" class="Liip\ImagineBundle\Imagine\Cache\Resolver\WebPathResolver" public="true" abstract="true">
+      <argument type="service" id="filesystem"/>
+      <argument type="service" id="router.request_context"/>
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.prototype.aws_s3" class="Liip\ImagineBundle\Imagine\Cache\Resolver\AwsS3Resolver" public="true" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument></argument>
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.prototype.cache" class="Liip\ImagineBundle\Imagine\Cache\Resolver\CacheResolver" public="true" abstract="true">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.prototype.flysystem" class="Liip\ImagineBundle\Imagine\Cache\Resolver\FlysystemResolver" public="true" abstract="true">
+      <argument></argument>
+      <argument type="service" id="router.request_context"/>
+      <argument></argument>
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.prototype.proxy" class="Liip\ImagineBundle\Imagine\Cache\Resolver\ProxyResolver" public="true" abstract="true">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.no_cache_web_path" class="Liip\ImagineBundle\Imagine\Cache\Resolver\NoCacheWebPathResolver" public="true">
+      <tag name="liip_imagine.cache.resolver" resolver="no_cache"/>
+      <argument type="service" id="router.request_context"/>
+    </service>
+    <service id="liip_imagine.form.type.image" class="Liip\ImagineBundle\Form\Type\ImageType">
+      <tag name="form.type" alias="liip_imagine_image"/>
+    </service>
+    <service id="liip_imagine.mime_type_guesser" class="Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface">
+      <factory class="Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser" method="getInstance"/>
+    </service>
+    <service id="liip_imagine.extension_guesser" class="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">
+      <factory class="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser" method="getInstance"/>
+    </service>
+    <service id="liip_imagine.binary.mime_type_guesser" class="Liip\ImagineBundle\Binary\SimpleMimeTypeGuesser">
+      <argument type="service">
+        <service class="Symfony\Component\Mime\MimeTypes">
+          <factory class="Symfony\Component\Mime\MimeTypes" method="getDefault"/>
+        </service>
+      </argument>
+    </service>
+    <service id="liip_imagine.cache.signer" class="Liip\ImagineBundle\Imagine\Cache\Signer" public="true">
+      <argument>%env(APP_SECRET)%</argument>
+    </service>
+    <service id="liip_imagine.filter.post_processor.jpegoptim" class="Liip\ImagineBundle\Imagine\Filter\PostProcessor\JpegOptimPostProcessor">
+      <tag name="liip_imagine.filter.post_processor" post_processor="jpegoptim"/>
+      <argument>/usr/bin/jpegoptim</argument>
+      <argument>true</argument>
+      <argument>null</argument>
+      <argument>true</argument>
+      <argument>null</argument>
+    </service>
+    <service id="liip_imagine.filter.post_processor.optipng" class="Liip\ImagineBundle\Imagine\Filter\PostProcessor\OptiPngPostProcessor">
+      <tag name="liip_imagine.filter.post_processor" post_processor="optipng"/>
+      <argument>/usr/bin/optipng</argument>
+      <argument>7</argument>
+      <argument>true</argument>
+      <argument>null</argument>
+    </service>
+    <service id="liip_imagine.filter.post_processor.pngquant" class="Liip\ImagineBundle\Imagine\Filter\PostProcessor\PngquantPostProcessor">
+      <tag name="liip_imagine.filter.post_processor" post_processor="pngquant"/>
+      <argument>/usr/bin/pngquant</argument>
+    </service>
+    <service id="liip_imagine.filter.post_processor.mozjpeg" class="Liip\ImagineBundle\Imagine\Filter\PostProcessor\MozJpegPostProcessor">
+      <tag name="liip_imagine.filter.post_processor" post_processor="mozjpeg"/>
+      <argument>/opt/mozjpeg/bin/cjpeg</argument>
+    </service>
+    <service id="liip_imagine.command.cache_remove" class="Liip\ImagineBundle\Command\RemoveCacheCommand">
+      <tag name="console.command" command="liip:imagine:cache:remove" alias="imagine:del"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+      <argument type="service" id="liip_imagine.filter.manager"/>
+      <call method="setName">
+        <argument>liip:imagine:cache:remove</argument>
+      </call>
+    </service>
+    <service id="liip_imagine.command.cache_resolve" class="Liip\ImagineBundle\Command\ResolveCacheCommand">
+      <tag name="console.command" command="liip:imagine:cache:resolve" alias="imagine:get"/>
+      <argument type="service" id="liip_imagine.data.manager"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+      <argument type="service" id="liip_imagine.filter.manager"/>
+      <call method="setName">
+        <argument>liip:imagine:cache:resolve</argument>
+      </call>
+    </service>
+    <service id="liip_imagine.templating.filter_helper" class="Liip\ImagineBundle\Templating\Helper\FilterHelper">
+      <tag name="templating.helper" alias="imagine"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+      <deprecated>The "%service_id%" service is deprecated since LiipImagineBundle 2.2 and will be removed in 3.0.</deprecated>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5404,16 +6293,19 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.QhPwbfn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ofxohYI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\OptionType" type="service" id="App\Form\OptionType"/>
         <argument key="App\Form\PropertySearchType" type="service" id="App\Form\PropertySearchType"/>
         <argument key="App\Form\PropertyType" type="service" id="App\Form\PropertyType"/>
+        <argument key="Liip\ImagineBundle\Form\Type\ImageType" type="service" id="liip_imagine.form.type.image"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
+        <argument key="Vich\UploaderBundle\Form\Type\VichFileType" type="service" id="vich_uploader.form.type.file"/>
+        <argument key="Vich\UploaderBundle\Form\Type\VichImageType" type="service" id="vich_uploader.form.type.image"/>
       </argument>
     </service>
     <service id=".debug.http_client" class="Symfony\Component\HttpClient\TraceableHttpClient">
@@ -5599,6 +6491,7 @@
       <configurator class="Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\AddDebugLogProcessorPass" method="configureLogger"/>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id="slugger" class="Symfony\Component\String\Slugger\AsciiSlugger"/>
     <service id=".service_locator.V.o0zE7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5811,7 +6704,7 @@
     <service id=".errored..service_locator.hx5iYvn.App\Entity\Option" class="App\Entity\Option"/>
     <service id=".errored..service_locator.cmwrHo6.App\Entity\Property" class="App\Entity\Property"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.e_Vkd5X"/>
+      <argument type="service" id=".service_locator.Tj917Ix"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5879,6 +6772,11 @@
         <argument key="server:stop">web_server.command.server_stop</argument>
         <argument key="server:status">web_server.command.server_status</argument>
         <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
+        <argument key="vich:mapping:debug-class">vich_uploader.command.mapping_debug_class</argument>
+        <argument key="vich:mapping:debug">vich_uploader.command.mapping_debug</argument>
+        <argument key="vich:mapping:list-classes">vich_uploader.command.mapping_list_classes</argument>
+        <argument key="liip:imagine:cache:remove">liip_imagine.command.cache_remove</argument>
+        <argument key="liip:imagine:cache:resolve">liip_imagine.command.cache_resolve</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5902,7 +6800,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.e_Vkd5X" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Tj917Ix" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -5962,6 +6860,8 @@
         <argument key="doctrine_migrations.status_command" type="service" id="doctrine_migrations.status_command"/>
         <argument key="doctrine_migrations.up_to_date_command" type="service" id="doctrine_migrations.up_to_date_command"/>
         <argument key="doctrine_migrations.version_command" type="service" id="doctrine_migrations.version_command"/>
+        <argument key="liip_imagine.command.cache_remove" type="service" id="liip_imagine.command.cache_remove"/>
+        <argument key="liip_imagine.command.cache_resolve" type="service" id="liip_imagine.command.cache_resolve"/>
         <argument key="maker.auto_command.make_auth" type="service" id="maker.auto_command.make_auth"/>
         <argument key="maker.auto_command.make_command" type="service" id="maker.auto_command.make_command"/>
         <argument key="maker.auto_command.make_controller" type="service" id="maker.auto_command.make_controller"/>
@@ -5988,6 +6888,9 @@
         <argument key="twig.command.debug" type="service" id="twig.command.debug"/>
         <argument key="twig.command.lint" type="service" id="twig.command.lint"/>
         <argument key="var_dumper.command.server_dump" type="service" id="var_dumper.command.server_dump"/>
+        <argument key="vich_uploader.command.mapping_debug" type="service" id="vich_uploader.command.mapping_debug"/>
+        <argument key="vich_uploader.command.mapping_debug_class" type="service" id="vich_uploader.command.mapping_debug_class"/>
+        <argument key="vich_uploader.command.mapping_list_classes" type="service" id="vich_uploader.command.mapping_list_classes"/>
         <argument key="web_server.command.server_run" type="service" id="web_server.command.server_run"/>
         <argument key="web_server.command.server_start" type="service" id="web_server.command.server_start"/>
         <argument key="web_server.command.server_status" type="service" id="web_server.command.server_status"/>
@@ -6188,6 +7091,33 @@
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="vich_uploader.storage" alias="vich_uploader.storage.file_system"/>
+    <service id="Vich\UploaderBundle\Storage\StorageInterface" alias="vich_uploader.storage.file_system" public="false"/>
+    <service id="Vich\UploaderBundle\Storage\FileSystemStorage" alias="vich_uploader.storage.file_system" public="false"/>
+    <service id="vich_uploader.metadata_driver" alias="vich_uploader.metadata_driver.chain" public="false"/>
+    <service id="vich_uploader.metadata.cache" alias="vich_uploader.metadata.cache.file_cache" public="false"/>
+    <service id="Vich\UploaderBundle\Mapping\PropertyMappingFactory" alias="vich_uploader.property_mapping_factory" public="false"/>
+    <service id="vich_uploader.namer_uniqid" alias="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="vich_uploader.namer_property" alias="Vich\UploaderBundle\Naming\PropertyNamer" public="true"/>
+    <service id="vich_uploader.namer_origname" alias="Vich\UploaderBundle\Naming\OrignameNamer" public="true"/>
+    <service id="vich_uploader.namer_hash" alias="Vich\UploaderBundle\Naming\HashNamer" public="true"/>
+    <service id="vich_uploader.namer_base64" alias="Vich\UploaderBundle\Naming\Base64Namer" public="true"/>
+    <service id="vich_uploader.directory_namer_subdir" alias="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_directory_property" alias="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_directory_current_date_time" alias="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_smart_unique" alias="Vich\UploaderBundle\Naming\SmartUniqueNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Handler\DownloadHandler" alias="vich_uploader.download_handler" public="false"/>
+    <service id="Vich\UploaderBundle\Handler\UploadHandler" alias="vich_uploader.upload_handler" public="false"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichFileType" alias="vich_uploader.form.type.file" public="false"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
+    <service id="Liip\ImagineBundle\Config\FilterFactoryCollection" alias="liip_imagine.config.filter_factory_collection"/>
+    <service id="Liip\ImagineBundle\Config\StackBuilder" alias="liip_imagine.config.stack_builder"/>
+    <service id="Liip\ImagineBundle\Config\StackCollection" alias="liip_imagine.config.stack_collection"/>
+    <service id="liip_imagine.controller" alias="Liip\ImagineBundle\Controller\ImagineController" public="true"/>
+    <service id="liip_imagine" alias="liip_imagine.gd"/>
+    <service id="Liip\ImagineBundle\Imagine\Cache\CacheManager" alias="liip_imagine.cache.manager" public="false"/>
+    <service id="Liip\ImagineBundle\Imagine\Data\DataManager" alias="liip_imagine.data.manager" public="false"/>
+    <service id="Liip\ImagineBundle\Imagine\Filter\FilterManager" alias="liip_imagine.filter.manager" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.Cgi8EQm"/>
@@ -6204,6 +7134,7 @@
     <service id="Psr\Log\LoggerInterface $doctrineLogger" alias="monolog.logger.doctrine"/>
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
+    <service id="Symfony\Component\String\Slugger\SluggerInterface" alias="slugger"/>
     <service id=".service_locator.tHpW6v3" alias=".service_locator.Y7gDuDN" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>

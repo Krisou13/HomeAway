@@ -27,5 +27,7 @@ return [
     'property.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::index'], [], [['text', '/biens']], [], []],
     'property.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\PropertyController::getSlug'], ['slug' => '[a-z0-9\\-]*'], [['variable', '-', '[^/]++', 'id'], ['variable', '/', '[a-z0-9\\-]*', 'slug'], ['text', '/biens']], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
+    'liip_imagine_filter_runtime' => [['filter', 'hash', 'path'], ['_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'], ['filter' => '[A-z0-9_-]*', 'path' => '.+'], [['variable', '/', '.+', 'path'], ['variable', '/', '[^/]++', 'hash'], ['text', '/rc'], ['variable', '/', '[A-z0-9_-]*', 'filter'], ['text', '/media/cache/resolve']], [], []],
+    'liip_imagine_filter' => [['filter', 'path'], ['_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'], ['filter' => '[A-z0-9_-]*', 'path' => '.+'], [['variable', '/', '.+', 'path'], ['variable', '/', '[A-z0-9_-]*', 'filter'], ['text', '/media/cache/resolve']], [], []],
     'logout' => [[], [], [], [['text', '/logout']], [], []],
 ];
