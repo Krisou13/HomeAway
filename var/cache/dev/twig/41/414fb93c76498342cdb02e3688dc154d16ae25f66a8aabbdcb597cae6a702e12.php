@@ -88,43 +88,98 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
         echo "    <div class=\"jumbotron jumbotron-fluid\">
      <div class=\"container\">
         
+         ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 10));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 11
+            echo "             <div class=\"alert alert-success\">
+                 ";
+            // line 12
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+             </div>
+         ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "
         <div class=\"row\">
             <div class=\"col-md-8\">
             ";
-        // line 12
-        if (twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 12, $this->source); })()), "filename", [], "any", false, false, false, 12)) {
-            // line 13
+        // line 18
+        if (twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 18, $this->source); })()), "filename", [], "any", false, false, false, 18)) {
+            // line 19
             echo "                    <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset((isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 13, $this->source); })()), "imageFile"), "medium"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset((isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 19, $this->source); })()), "imageFile"), "medium"), "html", null, true);
             echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
                 ";
         } else {
-            // line 15
+            // line 21
             echo "                    <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("/images/properties/empty.jpg", "medium"), "html", null, true);
-            echo "\" alt=\"card-img-top\" class=\"width: 100%; height: auto\">
+            echo "\" class=\"card-img-top\" class=\"width: 100%; height: auto\">
                 ";
         }
-        // line 17
+        // line 23
         echo "
            </div>
         
             <div class=\"col-md-4\"> 
                 <h1>";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 21, $this->source); })()), "title", [], "any", false, false, false, 21), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 27, $this->source); })()), "title", [], "any", false, false, false, 27), "html", null, true);
         echo "</h1>
                 <h2>";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 22, $this->source); })()), "rooms", [], "any", false, false, false, 22), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 28, $this->source); })()), "rooms", [], "any", false, false, false, 28), "html", null, true);
         echo " pièces - ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 22, $this->source); })()), "surface", [], "any", false, false, false, 22), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 28, $this->source); })()), "surface", [], "any", false, false, false, 28), "html", null, true);
         echo " m²</h2>
                 <div class=\"text-primary\" style=\"font-size: 4rem; font-weight: bold;\">";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 23, $this->source); })()), "formattedPrice", [], "any", false, false, false, 23), "html", null, true);
+        // line 29
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 29, $this->source); })()), "formattedPrice", [], "any", false, false, false, 29), "html", null, true);
         echo " €</div>
-                <a href=\"#\" class=\"btn btn-primary\">Contacter l'agence</a>     
+                <a href=\"#\" class=\"btn btn-primary\">Contacter l'agence</a>
+                <div id=\"contactForm\" class=\"mt-4\">
+                ";
+        // line 32
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), 'form_start');
+        echo "
+            <div class=\"row\">
+                <div class=\"col\">";
+        // line 34
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), "firstname", [], "any", false, false, false, 34), 'row');
+        echo "</div>
+                <dic class=\"col\">";
+        // line 35
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), "lastname", [], "any", false, false, false, 35), 'row');
+        echo "</div>
+            </div>
+            <div class=\"row\">
+                <div class=\"col\">";
+        // line 38
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), "phone", [], "any", false, false, false, 38), 'row');
+        echo "</div>
+                <div class=\"col\">";
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "email", [], "any", false, false, false, 39), 'row');
+        echo "</div>
+            </div>
+                ";
+        // line 41
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'rest');
+        echo "
+                <div class=\"form-group\">
+                    <button class=\"btn btn-primary\">Envoyer</button>
+                    </div>
+                ";
+        // line 45
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), 'form_end');
+        echo "    
             </div>
         </div>
     </div>
@@ -134,8 +189,8 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
            
         <p>
             ";
-        // line 33
-        echo nl2br(twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 33, $this->source); })()), "description", [], "any", false, false, false, 33), "html", null, true));
+        // line 54
+        echo nl2br(twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 54, $this->source); })()), "description", [], "any", false, false, false, 54), "html", null, true));
         echo "
         </p>
         
@@ -150,36 +205,36 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
                    <tr>
                         <td>Surface habitable</td>
                         <td>";
-        // line 46
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 46, $this->source); })()), "surface", [], "any", false, false, false, 46), "html", null, true);
+        // line 67
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 67, $this->source); })()), "surface", [], "any", false, false, false, 67), "html", null, true);
         echo " m²</td>
                    </tr>
                    <tr>
                         <td>Pièces</td>
                         <td>";
-        // line 50
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 50, $this->source); })()), "rooms", [], "any", false, false, false, 50), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 71, $this->source); })()), "rooms", [], "any", false, false, false, 71), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <td>Chambres</td>
                         <td>";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 54, $this->source); })()), "bedrooms", [], "any", false, false, false, 54), "html", null, true);
+        // line 75
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 75, $this->source); })()), "bedrooms", [], "any", false, false, false, 75), "html", null, true);
         echo "</td>
                    </tr>
                    <tr>
                         <td>Etage</td>
                         <td>";
-        // line 58
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 58, $this->source); })()), "floor", [], "any", false, false, false, 58), "html", null, true);
+        // line 79
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 79, $this->source); })()), "floor", [], "any", false, false, false, 79), "html", null, true);
         echo "</td>
                    </tr>
                    <tr>
                         <td>Chauffage</td>
                         <td>";
-        // line 62
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 62, $this->source); })()), "heatType", [], "any", false, false, false, 62), "html", null, true);
+        // line 83
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 83, $this->source); })()), "heatType", [], "any", false, false, false, 83), "html", null, true);
         echo "</td>
                     </tr>
                 </table>         
@@ -215,7 +270,7 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
 
     public function getDebugInfo()
     {
-        return array (  182 => 62,  175 => 58,  168 => 54,  161 => 50,  154 => 46,  138 => 33,  125 => 23,  119 => 22,  115 => 21,  109 => 17,  103 => 15,  97 => 13,  95 => 12,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
+        return array (  237 => 83,  230 => 79,  223 => 75,  216 => 71,  209 => 67,  193 => 54,  181 => 45,  174 => 41,  169 => 39,  165 => 38,  159 => 35,  155 => 34,  150 => 32,  144 => 29,  138 => 28,  134 => 27,  128 => 23,  122 => 21,  116 => 19,  114 => 18,  109 => 15,  100 => 12,  97 => 11,  93 => 10,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -229,12 +284,18 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
     <div class=\"jumbotron jumbotron-fluid\">
      <div class=\"container\">
         
+         {% for message in app.flashes('success') %}
+             <div class=\"alert alert-success\">
+                 {{ message }}
+             </div>
+         {% endfor %}
+
         <div class=\"row\">
             <div class=\"col-md-8\">
             {% if property.filename %}
                     <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('medium') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
                 {% else %}
-                    <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('medium') }}\" alt=\"card-img-top\" class=\"width: 100%; height: auto\">
+                    <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('medium') }}\" class=\"card-img-top\" class=\"width: 100%; height: auto\">
                 {% endif %}
 
            </div>
@@ -243,7 +304,22 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
                 <h1>{{ property.title }}</h1>
                 <h2>{{ property.rooms }} pièces - {{ property.surface }} m²</h2>
                 <div class=\"text-primary\" style=\"font-size: 4rem; font-weight: bold;\">{{ property.formattedPrice }} €</div>
-                <a href=\"#\" class=\"btn btn-primary\">Contacter l'agence</a>     
+                <a href=\"#\" class=\"btn btn-primary\">Contacter l'agence</a>
+                <div id=\"contactForm\" class=\"mt-4\">
+                {{form_start(form)}}
+            <div class=\"row\">
+                <div class=\"col\">{{ form_row(form.firstname)}}</div>
+                <dic class=\"col\">{{ form_row(form.lastname)}}</div>
+            </div>
+            <div class=\"row\">
+                <div class=\"col\">{{ form_row(form.phone)}}</div>
+                <div class=\"col\">{{ form_row(form.email)}}</div>
+            </div>
+                {{form_rest(form)}}
+                <div class=\"form-group\">
+                    <button class=\"btn btn-primary\">Envoyer</button>
+                    </div>
+                {{form_end(form)}}    
             </div>
         </div>
     </div>
